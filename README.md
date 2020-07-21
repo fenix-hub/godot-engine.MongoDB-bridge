@@ -27,7 +27,8 @@ To make this plugin work:
 
 ## What is MongoDB?
 *MongoDB* is a document database, which means it stores data in JSON-like documents called **BSON**.
-[BSON](https://docs.mongodb.com/manual/reference/bson-types/) is a binary serialization format used to store documents and make remote procedure calls in MongoDB. The BSON specification is located at [bsonspec.org](bsonspec.org).
+[BSON](https://docs.mongodb.com/manual/reference/bson-types/) is a binary serialization format used to store documents and make remote procedure calls in MongoDB. 
+The BSON specification is located at [bsonspec.org](bsonspec.org).
 > Read more aboute MongoDB [here](https://docs.mongodb.com/manual/introduction/).  
 <br/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/512px-NuGet_project_logo.svg.png" align="left" width="64" height="64">
