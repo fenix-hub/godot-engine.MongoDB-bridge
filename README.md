@@ -1,4 +1,4 @@
-<img src="addons/MongoDB/mongoDB-icon.png" align="left" width="64" height="64">
+<img src="addons/MongoDB/mongoDB-icon.png" align="left" width="64" height="64" bottom="0">
 
 # Godot Engine -> MongoDB Bridge
 **A MongoDB bridge written in C# for Godot Engine mono projects.**
