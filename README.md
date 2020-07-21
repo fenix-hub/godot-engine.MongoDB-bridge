@@ -1,4 +1,4 @@
-<img src="addons/MongoDB/mongoDB-icon.png" align="left" width="64" height="64" bottom="0">
+<img src="addons/MongoDB/mongodb-bridge-icon.png" align="left" width="64" height="64">
 
 # Godot Engine -> MongoDB Bridge
 **A MongoDB bridge written in C# for Godot Engine mono projects.**
@@ -24,7 +24,7 @@ To make this plugin work:
 5. use the command `nuget restore` via a command line at your choice  
   
   
-<img src="https://cdn.iconscout.com/icon/free/png-512/mongodb-5-1175140.png" align="left" width="32" height="32">
+<img src="https://cdn.iconscout.com/icon/free/png-512/mongodb-4-1175139.png" align="left" width="32" height="32">
 
 ## What is MongoDB?
 *MongoDB* is a document database, which means it stores data in JSON-like documents called **BSON**.
