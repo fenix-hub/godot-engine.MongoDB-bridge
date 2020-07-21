@@ -18,6 +18,8 @@ public class _MongoCollection : Node
 
     public Godot.Collections.Array<Dictionary> documents;
 
+    // --- PRIVATE FUNCTIONS : DON'T USE THEM UNLESS DIRECTLY USING C#
+
     public void LoadCollection(IMongoCollection<BsonDocument> collection, String path)
     {
         BsonCollection = collection;
@@ -38,6 +40,7 @@ public class _MongoCollection : Node
         documents = RetrieveDocuments();
     }
 
+    // --------------------------------------------------
 
     public Godot.Collections.Array<Dictionary> GetDocuments()
     {

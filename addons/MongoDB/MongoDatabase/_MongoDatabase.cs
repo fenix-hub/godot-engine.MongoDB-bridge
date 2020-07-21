@@ -44,4 +44,22 @@ public class _MongoDatabase : Node
         return CollectionScene;
     }
 
+    public _MongoCollection CreateCollection(String collectionName)
+    {
+        try
+        {
+            database.CreateCollection(collectionName);
+        }
+        catch (System.Exception)
+        {
+            GD.PrintErr("[MongoDB Bridge] >> A collection named '"+collectionName+"' already exists in the current database. The existing one is returned");
+        }
+        return GetCollection(collectionName);
+    }
+
+    public void DropCollection(String collectionName)
+    {
+        database.DropCollection(collectionName);
+    }
+
 }

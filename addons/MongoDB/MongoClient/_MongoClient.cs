@@ -18,10 +18,10 @@ public class _MongoClient : Node
         addonPath = path;
     }
 
-    public Godot.Collections.Array GetDatabaseList()
+    public Godot.Collections.Array<Dictionary> GetDatabaseList()
     {
         var databaseList = client.ListDatabases().ToList();
-        var databaseArray = Converters.ConvertBsonListToArray(databaseList);
+        var databaseArray = Converters.ConvertBsonListToJsonList(databaseList);
         return databaseArray;
     }
 
