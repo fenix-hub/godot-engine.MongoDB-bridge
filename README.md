@@ -23,14 +23,14 @@ To make this plugin work:
 ```
 5. use the command `nuget restore` via a command line at your choice  
 <br/>
-<img src="https://cdn.iconscout.com/icon/free/png-512/mongodb-4-1175139.png" align="left" width="32" height="32">
+<img src="https://cdn.iconscout.com/icon/free/png-512/mongodb-4-1175139.png" align="left" width="32" height="32" style="padding-top:20px;">
 
 ## What is MongoDB?
 *MongoDB* is a document database, which means it stores data in JSON-like documents called **BSON**.
 [BSON](https://docs.mongodb.com/manual/reference/bson-types/) is a binary serialization format used to store documents and make remote procedure calls in MongoDB. The BSON specification is located at [bsonspec.org](bsonspec.org).
 > Read more aboute MongoDB [here](https://docs.mongodb.com/manual/introduction/).  
 <br/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/512px-NuGet_project_logo.svg.png" align="left" width="32" height="32">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/512px-NuGet_project_logo.svg.png" align="left" width="32" height="32" style="padding-top:20px;">
 
 ## What is NuGet and why do I need it?
 *NuGet* is the package manager for .NET. The NuGet client tools provide the ability to produce and consume packages. The NuGet Gallery is the central package repository used by all package authors and consumers.  
