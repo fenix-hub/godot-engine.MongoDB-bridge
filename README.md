@@ -11,18 +11,14 @@ To make this plugin work:
 3. install this repository as a common Godot Engine addon, using the AssetLibrary or just cloning this repo in your **mono** project,  
 4. edit your `.csproj`, adding after the line including `<Reference Include="System" />` the following:
 ```
-<ItemGroup>
-  [...]
-  <PackageReference Include="MongoDB.Driver">
-    <Version>2.10.4</Version>
-  </PackageReference>
-  <PackageReference Include="MongoDB.Driver.Core">
-    <Version>2.10.4</Version>
-  </PackageReference>
-  <PackageReference Include="MongoDB.Bson">
-    <Version>2.10.4</Version>
-  </PackageReference>
-  [...]
-</ItemGroup>
+<PackageReference Include="MongoDB.Driver">
+  <Version>2.10.4</Version>
+</PackageReference>
+<PackageReference Include="MongoDB.Driver.Core">
+  <Version>2.10.4</Version>
+</PackageReference>
+<PackageReference Include="MongoDB.Bson">
+  <Version>2.10.4</Version>
+</PackageReference>
 ```
 5. use the command `nuget restore` via a command line at your choice
