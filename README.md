@@ -89,6 +89,8 @@ But **note**, this doesn't mean you need to write your whole project in C# if yo
 |`GetCollectionsList()`|`Array<String>`|Return an `Array` of different `String` representing all collections contained in the specified database|
 |`GetCollectionsNameList()`|`Array<String>`|Return an `Array` of different `String` containing all collections' names contained in the specified database|
 |`GetCollection(collection_name : String)`|`MongoCollection`|Return a specific `MongoCollection` inside the database by its name|
+|`CreateCollection(collection_name : String)`|`MongoCollection`|Create a new `MongoCollection` and return it|
+|`DropCollection(collection_name : String)`|`void`|Drop a specific `MongoCollection`|
 <br/>  
 
 **MongoCollection**
