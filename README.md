@@ -13,6 +13,7 @@
 - [What is NuGet and why do I need it?](https://github.com/fenix-hub/godot-engine.MongoDB-bridge#what-is-nuget-and-why-do-i-need-it)  
 - [Why can I only use this plugin with the Mono version?](https://github.com/fenix-hub/godot-engine.MongoDB-bridge#why-can-i-only-use-this-plugin-with-the-mono-version?)  
 - [Table of Features](https://github.com/fenix-hub/godot-engine.MongoDB-bridge#table-of-features)
+- [Some examples](https://github.com/fenix-hub/godot-engine.MongoDB-bridge#some-examples)
 
 ## How does it work?
 *MongoDB Bridge* is a collection of scripts written in C# which interface MongoDB APIs to work with a MongoDB database even with GDScript. 
@@ -105,3 +106,18 @@ parsed to a GDScript `JSON`|
 |`UpdateDocumentsBy(key : String, oldValue : String, newValue : String)`|`void`|Update all the documents found with a `key:value` query, replacing the `oldValue` with the `newValue` in each one of them|
 |`DeleteDocumentBy(key : String, value : String)`|`void`|Delete the first document found with a `key:value` query|
 |`DeleteDocumentsBy(key : String, value : String)`|`void`|Delete all the documents found with a `key:value` query|
+<br/>  
+  
+## Some examples  
+```
+var client : MongoClient = MongoAPI.Connect(MongoAPI.host);
+var database_list : Array = client.GetDatabaseList();
+var database_namelist : Array = client.GetDatabaseNameList();
+var database : MongoDatabase = client.GetDatabase(database_namelist[2]);
+var collections_namelist : Array = database.GetCollectionsNameList();
+var collection : MongoCollection = database.GetCollection(collections_namelist[0]);
+var documents_list : Array = collection.GetDocuments();
+var document : Dictionary = documents_list[0];
+print(document);
+print(document.name);
+```
