@@ -22,22 +22,20 @@ To make this plugin work:
 </PackageReference>
 ```
 5. use the command `nuget restore` via a command line at your choice  
-  
-  
+<br/>
 <img src="https://cdn.iconscout.com/icon/free/png-512/mongodb-4-1175139.png" align="left" width="32" height="32">
 
 ## What is MongoDB?
 *MongoDB* is a document database, which means it stores data in JSON-like documents called **BSON**.
 [BSON](https://docs.mongodb.com/manual/reference/bson-types/) is a binary serialization format used to store documents and make remote procedure calls in MongoDB. The BSON specification is located at [bsonspec.org](bsonspec.org).
 > Read more aboute MongoDB [here](https://docs.mongodb.com/manual/introduction/).  
-  
-  
+<br/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/512px-NuGet_project_logo.svg.png" align="left" width="32" height="32">
 
 ## What is NuGet and why do I need it?
 *NuGet* is the package manager for .NET. The NuGet client tools provide the ability to produce and consume packages. The NuGet Gallery is the central package repository used by all package authors and consumers.  
 NuGet is required to correctly download and implement dipendencies in C# projects just referencing them in the `.csproj` file with a `<PackageReference>`.
-
+<br/>
 ## Why can I only use this plugin with the Mono version?
 Even though Godot Engine currently supports [Cross-Language Scripting](https://docs.godotengine.org/it/stable/getting_started/scripting/cross_language_scripting.html) without the need of a .mono project, .cs files in this addon intensively rely on `MongoDB` Packages.  
 In order to compile these packages and build the project, a mono project is required. Otherwise, a C++ module implementing MongoDB APIs should be compiled, but that's not this case and it is not what I'm currently working on.  
