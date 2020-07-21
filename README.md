@@ -1,7 +1,18 @@
+<p align="right">
+  <a href="https://discord.gg/JNrcucg">
+    <img src="https://github.com/fenix-hub/ColoredBadges/blob/master/svg/social/discord.svg" alt="discord" style="vertical-align:top; margin:6px 4px">
+  </a>
+</p>
+
 <img src="addons/MongoDB/mongodb-bridge-icon.png" align="left" width="80" height="80">
 
 # Godot Engine - MongoDB Bridge
-**A MongoDB bridge written in C# for Godot Engine mono projects.**
+**A MongoDB bridge written in C# for Godot Engine mono projects.**  
+- [How does it work?](https://github.com/fenix-hub/godot-engine.MongoDB-bridge#how-does-it-work)  
+- [What is MongoDB?](https://github.com/fenix-hub/godot-engine.MongoDB-bridge#what-is-mongodb)  
+- [What is NuGet and why do I need it?](https://github.com/fenix-hub/godot-engine.MongoDB-bridge#what-is-nuget-and-why-do-i-need-it)  
+- [Why can I only use this plugin with the Mono version?](https://github.com/fenix-hub/godot-engine.MongoDB-bridge#why-can-i-only-use-this-plugin-with-the-mono-version?)  
+- [Table of Features](https://github.com/fenix-hub/godot-engine.MongoDB-bridge#table-of-features)
 
 ## How does it work?
 *MongoDB Bridge* is a collection of scripts written in C# which interface MongoDB APIs to work with a MongoDB database even with GDScript. 
@@ -30,17 +41,67 @@ To make this plugin work:
 [BSON](https://docs.mongodb.com/manual/reference/bson-types/) is a binary serialization format used to store documents and make remote procedure calls in MongoDB.   
 The BSON specification is located at [bsonspec.org](bsonspec.org).
 > Read more aboute MongoDB [here](https://docs.mongodb.com/manual/introduction/).  
-<br/>
+<br/>  
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/512px-NuGet_project_logo.svg.png" align="left" width="64" height="64">
 
 ## What is NuGet and why do I need it?
 *NuGet* is the package manager for .NET. The NuGet client tools provide the ability to produce and consume packages. The NuGet Gallery is the central package repository used by all package authors and consumers.  
 NuGet is required to correctly download and implement dipendencies in C# projects just referencing them in the `.csproj` file with a `<PackageReference>`.
-<br/>
-## Why can I only use this plugin with the Mono version?
+<br/>  
+  
+## :grey_question: Why can I only use this plugin with the Mono version?
 Even though Godot Engine currently supports [Cross-Language Scripting](https://docs.godotengine.org/it/stable/getting_started/scripting/cross_language_scripting.html) without the need of a .mono project, .cs files in this addon intensively rely on `MongoDB` Packages.  
-In order to compile these packages and build the project, a mono project is required. Otherwise, a C++ module implementing MongoDB APIs should be compiled, but that's not this case and it is not what I'm currently working on.  
+In order to compile these packages and build the project, a mono project is required. Otherwise, a C++ module implementing MongoDB APIs should be compiled, but that's not the case (<ins>even though it is something I'm working on</ins>).  
 But **note**, this doesn't mean you need to write your whole project in C# if you want to use MongoDB APIs: this is why I made this brigde, indeed.  
-*MongoDB Bridge* lets you write your whole project in GDScript without caring too much about C# stuff, and still access to all main functionalities you would have directly working with [MongoDB C# Drivers](https://docs.mongodb.com/drivers/).
+*MongoDB Bridge* lets you write your whole project in GDScript without caring too much about C# stuff, and still access to all main functionalities you would have directly working with [MongoDB C# Drivers](https://docs.mongodb.com/drivers/).  
+<br/>
+  
+<img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_script_icon_130178.png" align="left" width="64" height="64">
 
+## Table of Features   
+| Class | Description |
+| ------------- | ------------- |
+|`MongoAPI`|Instance of the API to initialize the Bridge and connect to a MongoDB server|
+|`MongoClient`|Instance of a client connected to a specific server, containing a set of databases|
+|`MongoDatabase`|Instance of a single database containing multiple collections of documents|
+|`MongoCollection`|Instance of a collection of BSON/JSON documents|
+<br/>  
 
+**MongoAPI**
+| Method | Type | Description |
+| ------------- | ------------- | ------------- |
+|`Connect(hostIp : String)`|`MongoClient`|Connect to a server in order to retrieve a client. You can get the default `hostIp` with `MongoAPI.host`, which is `mongodb://127.0.0.1:27017`|
+<br/>  
+
+**MongoClient**
+| Method | Type | Description |
+| ------------- | ------------- | ------------- |
+|`GetDatabaseList()`|`Array<Dictionary>`|Return an `Arrray` of different `Dictionary` containing all databases belonging to the `MongoClient` connected|
+|`GetDatabaseNameList()`|`Array<String>`|Return an `Arrray` of different `String` containing all databases' names belonging to the `MongoClient` connected|
+|`GetDatabase(database_name : String)`|`MongoDatabase`|Return a specific `MongoDatabase` by its name|
+<br/> 
+
+**MongoDatabase**
+| Method | Type | Description |
+| ------------- | ------------- | ------------- |
+|`GetCollectionsList()`|`Array<String>`|Return an `Arrray` of different `String` representing all collections contained in the specified database|
+|`GetCollectionsNameList()`|`Array<String>`|Return an `Arrray` of different `String` containing all collections' names contained in the specified database|
+|`GetCollection(collection_name : String)`|`MongoCollection`|Return a specific `MongoCollection` inside the database by its name|
+<br/>  
+
+**MongoCollection**
+| Method | Type | Description |
+| ------------- | ------------- | ------------- |
+|`GetDocuments()`|`Array<Dictionary>`|Return an `Arrray` of different `Dictionary` representing a single document. The `Dictionary` is a serialization of a `BSON` document parsed to a GDScript `JSON`|
+|`InsertDocument(document : Dictionary, _id : String)`|`void`|Insert a `BSON` document in the collection, parsed by a GDScript `Dictionary`. **note:** the \_id is not mandatory, but it always needs to be `null`,`""` or `" "` if you don't want to define an \_id|
+parsed to a GDScript `JSON`|
+|`InsertManyDocuments(document_list : Array<Dictionary>)`|`void`|Insert multiple `BSON` documents in the collection, parsed by an `Array` of GDScript different `Dictionary`|
+|`CountDocuments()`|`int`|Count the number of `Documents` in the `MongoCollection`|
+|`GetDocument(_id : String)`|`Dictionary`|Return a specific document as a `Dictionary`|
+|`GetDocument(_id : String)`|`Dictionary`|Return a specific document as a `Dictionary`|
+|`FindDocumentsBy(key : String, value : String)`|`Array<Dictionary>`|Return an `Arrray` of different `Dictionary` representing the documents that respect the query with the specified `key` and `value`|
+|`UpdateDocumentBy(key : String, oldValue : String, newValue : String)`|`void`|Update the first document found with a `key:value` query, replacing the `oldValue` with the `newValue`|
+|`UpdateDocumentsBy(key : String, oldValue : String, newValue : String)`|`void`|Update all the documents found with a `key:value` query, replacing the `oldValue` with the `newValue` in each one of them|
+|`DeleteDocumentBy(key : String, value : String)`|`void`|Delete the first document found with a `key:value` query|
+|`DeleteDocumentsBy(key : String, value : String)`|`void`|Delete all the documents found with a `key:value` query|
