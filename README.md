@@ -77,30 +77,30 @@ But **note**, this doesn't mean you need to write your whole project in C# if yo
 **MongoClient**
 | Method | Type | Description |
 | ------------- | ------------- | ------------- |
-|`GetDatabaseList()`|`Array<Dictionary>`|Return an `Arrray` of different `Dictionary` containing all databases belonging to the `MongoClient` connected|
-|`GetDatabaseNameList()`|`Array<String>`|Return an `Arrray` of different `String` containing all databases' names belonging to the `MongoClient` connected|
+|`GetDatabaseList()`|`Array<Dictionary>`|Return an `Array` of different `Dictionary` containing all databases belonging to the `MongoClient` connected|
+|`GetDatabaseNameList()`|`Array<String>`|Return an `Array` of different `String` containing all databases' names belonging to the `MongoClient` connected|
 |`GetDatabase(database_name : String)`|`MongoDatabase`|Return a specific `MongoDatabase` by its name|
 <br/> 
 
 **MongoDatabase**
 | Method | Type | Description |
 | ------------- | ------------- | ------------- |
-|`GetCollectionsList()`|`Array<String>`|Return an `Arrray` of different `String` representing all collections contained in the specified database|
-|`GetCollectionsNameList()`|`Array<String>`|Return an `Arrray` of different `String` containing all collections' names contained in the specified database|
+|`GetCollectionsList()`|`Array<String>`|Return an `Array` of different `String` representing all collections contained in the specified database|
+|`GetCollectionsNameList()`|`Array<String>`|Return an `Array` of different `String` containing all collections' names contained in the specified database|
 |`GetCollection(collection_name : String)`|`MongoCollection`|Return a specific `MongoCollection` inside the database by its name|
 <br/>  
 
 **MongoCollection**
 | Method | Type | Description |
 | ------------- | ------------- | ------------- |
-|`GetDocuments()`|`Array<Dictionary>`|Return an `Arrray` of different `Dictionary` representing a single document. The `Dictionary` is a serialization of a `BSON` document parsed to a GDScript `JSON`|
+|`GetDocuments()`|`Array<Dictionary>`|Return an `Array` of different `Dictionary` representing a single document. The `Dictionary` is a serialization of a `BSON` document parsed to a GDScript `JSON`|
 |`InsertDocument(document : Dictionary, _id : String)`|`void`|Insert a `BSON` document in the collection, parsed by a GDScript `Dictionary`. **note:** the \_id is not mandatory, but it always needs to be `null`,`""` or `" "` if you don't want to define an \_id|
 parsed to a GDScript `JSON`|
 |`InsertManyDocuments(document_list : Array<Dictionary>)`|`void`|Insert multiple `BSON` documents in the collection, parsed by an `Array` of GDScript different `Dictionary`|
 |`CountDocuments()`|`int`|Count the number of `Documents` in the `MongoCollection`|
 |`GetDocument(_id : String)`|`Dictionary`|Return a specific document as a `Dictionary`|
 |`GetDocument(_id : String)`|`Dictionary`|Return a specific document as a `Dictionary`|
-|`FindDocumentsBy(key : String, value : String)`|`Array<Dictionary>`|Return an `Arrray` of different `Dictionary` representing the documents that respect the query with the specified `key` and `value`|
+|`FindDocumentsBy(key : String, value : String)`|`Array<Dictionary>`|Return an `Array` of different `Dictionary` representing the documents that respect the query with the specified `key` and `value`|
 |`UpdateDocumentBy(key : String, oldValue : String, newValue : String)`|`void`|Update the first document found with a `key:value` query, replacing the `oldValue` with the `newValue`|
 |`UpdateDocumentsBy(key : String, oldValue : String, newValue : String)`|`void`|Update all the documents found with a `key:value` query, replacing the `oldValue` with the `newValue` in each one of them|
 |`DeleteDocumentBy(key : String, value : String)`|`void`|Delete the first document found with a `key:value` query|
