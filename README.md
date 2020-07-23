@@ -98,7 +98,6 @@ But **note**, this doesn't mean you need to write your whole project in C# if yo
 | ------------- | ------------- | ------------- |
 |`GetDocuments()`|`Array<Dictionary>`|Return an `Array` of different `Dictionary` representing a single document. The `Dictionary` is a serialization of a `BSON` document parsed to a GDScript `JSON`|
 |`InsertDocument(document : Dictionary, _id : String)`|`void`|Insert a `BSON` document in the collection, parsed by a GDScript `Dictionary`. **note:** the \_id is not mandatory, but it always needs to be `null`,`""` or `" "` if you don't want to define an \_id|
-parsed to a GDScript `JSON`|
 |`InsertManyDocuments(document_list : Array<Dictionary>)`|`void`|Insert multiple `BSON` documents in the collection, parsed by an `Array` of GDScript different `Dictionary`|
 |`CountDocuments()`|`int`|Count the number of `Documents` in the `MongoCollection`|
 |`GetDocument(_id : String)`|`Dictionary`|Return a specific document as a `Dictionary`|
