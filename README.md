@@ -54,7 +54,7 @@ NuGet is required to correctly download and implement dipendencies in C# project
 ## :grey_question: Why can I only use this plugin with the Mono version?
 Even though Godot Engine currently supports [Cross-Language Scripting](https://docs.godotengine.org/it/stable/getting_started/scripting/cross_language_scripting.html) without the need of a .mono project, .cs files in this addon intensively rely on `MongoDB` Packages.  
 In order to compile these packages and build the project, a mono project is required. Otherwise, a C++ module implementing MongoDB APIs should be compiled, but that's not the case (<ins>even though it is something I'm working on</ins>).  
-But **note**, this doesn't mean you need to write your whole project in C# if you want to use MongoDB APIs: this is why I made this brigde, indeed.  
+But **note**, this doesn't mean you need to write your whole project in C# if you want to use MongoDB APIs: this is why I made this bridge, indeed.  
 *MongoDB Bridge* lets you write your whole project in GDScript without caring too much about C# stuff, and still access to all main functionalities you would have directly working with [MongoDB C# Drivers](https://docs.mongodb.com/drivers/).  
 <br/>
   
