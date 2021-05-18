@@ -110,7 +110,7 @@ But **note**, this doesn't mean you need to write your whole project in C# if yo
 <br/>  
   
 ## Some examples  
-```
+```gdscript
 var client : MongoClient = MongoAPI.Connect(MongoAPI.host);
 var database_list : Array = client.GetDatabaseList();
 var database_namelist : Array = client.GetDatabaseNameList();
