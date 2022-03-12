@@ -108,7 +108,7 @@ But **note**, this doesn't mean you need to write your whole project in C# if yo
 |`DeleteDocumentBy(key : String, value : String)`|`void`|Delete the first document found with a `key:value` query|
 |`DeleteDocumentsBy(key : String, value : String)`|`void`|Delete all the documents found with a `key:value` query|
 |`ReplaceOne(key : String, value : String, replacement_document : Dictionary)`|`void`| Replace document found with a `key:value` query|
-|`ReplaceOne(id : String, replacement_document : Dictionary)`|`void`| Replace document found with an `_id` query|
+|`ReplaceOneByID(id : String, replacement_document : Dictionary)`|`void`| Replace document found with an `_id` query|
 <br/>  
   
 ## Some examples  
