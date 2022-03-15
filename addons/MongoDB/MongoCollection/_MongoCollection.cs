@@ -129,6 +129,14 @@ public class _MongoCollection : Node
         BsonCollection.DeleteOne(filter);
         AutoRetrieveDocument();
     }
+    
+    public void DeleteDocumentByID(String id)
+    {
+	var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectID.Parse(id));
+	BsonCollection.DeleteOne(filter);
+	AutoRetrieveDocument();
+    }
+    
     public void DeleteDocumentsBy(String key, String value)
     {
         var filter = Builders<BsonDocument>.Filter.Eq(key, value);
