@@ -113,12 +113,14 @@ public class _MongoCollection : Node
      {
 	 var filter = Builders<BsonDocument>.Filter.Eq(key, value);
 	 BsonCollection.ReplaceOne(filter, Converters.ConvertDictionaryToBsonDocument(replacement));
+	 AutoRetrieveDocument();
      }
 
      public void ReplaceOneByID(String id, Dictionary replacement)
      {
 	 var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(id));
 	 BsonCollection.ReplaceOne(filter, Converters.ConvertDictionaryToBsonDocument(replacement));
+	 AutoRetrieveDocument();
      }
 
     public void DeleteDocumentBy(String key, String value)
