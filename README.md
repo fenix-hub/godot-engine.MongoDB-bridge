@@ -106,7 +106,10 @@ But **note**, this doesn't mean you need to write your whole project in C# if yo
 |`UpdateDocumentBy(key : String, oldValue : String, newValue : String)`|`void`|Update the first document found with a `key:value` query, replacing the `oldValue` with the `newValue`|
 |`UpdateDocumentsBy(key : String, oldValue : String, newValue : String)`|`void`|Update all the documents found with a `key:value` query, replacing the `oldValue` with the `newValue` in each one of them|
 |`DeleteDocumentBy(key : String, value : String)`|`void`|Delete the first document found with a `key:value` query|
+|`DeleteDocumentByID(String id)`|`void`|Delete the first document found with an `_id` query|
 |`DeleteDocumentsBy(key : String, value : String)`|`void`|Delete all the documents found with a `key:value` query|
+|`ReplaceOne(key : String, value : String, replacement_document : Dictionary)`|`void`| Replace document found with a `key:value` query|
+|`ReplaceOneByID(id : String, replacement_document : Dictionary)`|`void`| Replace document found with an `_id` query|
 <br/>  
   
 ## Some examples  
