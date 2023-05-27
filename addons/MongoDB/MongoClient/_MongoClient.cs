@@ -1,6 +1,7 @@
 using Godot;
 using Godot.Collections;
 using System;
+using System.Security.Authentication;
 using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -12,10 +13,21 @@ public class _MongoClient : Node
     private String addonPath;
     private MongoClient client;
 
-    public void LoadClient(MongoClient mongoClient, String path)
+    public void LoadClient(MongoClient mongoClient, String path, bool checkSslCertificate = true)
     {
         client = mongoClient;
         addonPath = path;
+       
+        if (!checkSslCertificate){
+			var settings = client.Settings.Clone();
+			settings.SslSettings = new SslSettings() {
+			CheckCertificateRevocation = true,
+			ServerCertificateValidationCallback = (sender, certificate, chain, errors) => true
+			};
+			
+			client = new MongoClient(settings);
+		}
+        
     }
 
     public Godot.Collections.Array<Dictionary> GetDatabaseList()
