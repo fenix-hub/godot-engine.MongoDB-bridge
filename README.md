@@ -73,6 +73,7 @@ But **note**, this doesn't mean you need to write your whole project in C# if yo
 | Method | Type | Description |
 | ------------- | ------------- | ------------- |
 |`Connect(hostIp : String)`|`MongoClient`|Connect to a server in order to retrieve a client. You can get the default `hostIp` with `MongoAPI.host`, which is `mongodb://127.0.0.1:27017`|
+|`Connect(hostIp : String, checkSslCertificate : Bool)`|`MongoClient`|Connect to a server in order to retrieve a client. If `checkSslCertificate` is set to `false` mongodb will connect without verifying SSL certificates|
 <br/>  
 
 **MongoClient**
@@ -100,7 +101,6 @@ But **note**, this doesn't mean you need to write your whole project in C# if yo
 |`InsertDocument(document : Dictionary, _id : String)`|`void`|Insert a `BSON` document in the collection, parsed by a GDScript `Dictionary`. **note:** the \_id is not mandatory, but it always needs to be `null`,`""` or `" "` if you don't want to define an \_id|
 |`InsertManyDocuments(document_list : Array<Dictionary>)`|`void`|Insert multiple `BSON` documents in the collection, parsed by an `Array` of GDScript different `Dictionary`|
 |`CountDocuments()`|`int`|Count the number of `Documents` in the `MongoCollection`|
-|`GetDocument(_id : String)`|`Dictionary`|Return a specific document as a `Dictionary`|
 |`GetDocument(_id : String)`|`Dictionary`|Return a specific document as a `Dictionary`|
 |`FindDocumentsBy(key : String, value : String)`|`Array<Dictionary>`|Return an `Array` of different `Dictionary` representing the documents that respect the query with the specified `key` and `value`|
 |`UpdateDocumentBy(key : String, oldValue : String, newValue : String)`|`void`|Update the first document found with a `key:value` query, replacing the `oldValue` with the `newValue`|
