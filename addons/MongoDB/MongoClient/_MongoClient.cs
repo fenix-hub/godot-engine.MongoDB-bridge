@@ -13,7 +13,7 @@ public class _MongoClient : Node
     private String addonPath;
     private MongoClient client;
 
-    public void LoadClient(MongoClient mongoClient, String path, bool checkSslCertificate = true)
+    public void LoadClient(MongoClient mongoClient, String path, bool checkSslCertificate)
     {
         client = mongoClient;
         addonPath = path;
